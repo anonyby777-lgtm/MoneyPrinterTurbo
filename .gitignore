@@ -42,3 +42,6 @@ htmlcov/
 .codegraph
 /docs/superpowers
 .understand-anything
+
+# artefatos locais de render do exemplo
+examples/turminha-da-floresta/clips/
