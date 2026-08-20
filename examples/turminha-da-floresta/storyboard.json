@@ -1,0 +1,111 @@
+{
+  "video_info": {
+    "title": "A Turminha da Floresta e o Trem das Cores — Cena Final: O Festival das Cores",
+    "target_duration_seconds": 47,
+    "resolution": { "width": 3840, "height": 2160 },
+    "fps": 30,
+    "aspect_ratio": "16:9",
+    "target_audience": "crianças de 2 a 6 anos (pré-escola)",
+    "core_message": "Cores + amizade: juntos conseguimos! Final feliz e interativo.",
+    "style_reference": "../VISUAL_BIBLE.md",
+    "generator": "Seedance 2.5 (image-to-video por shot, keyframes como reference frames)"
+  },
+  "scenes": [
+    {
+      "scene_id": "shot01", "scene_name": "Grupo no festival", "type": "animation",
+      "start_time": 0, "end_time": 4, "duration": 4,
+      "description": "Os quatro amigos sorriem em frente ao trem sorridente verde-menta na praça do festival; vapor suave, lanternas e sparkles.",
+      "elements": ["keyframes/01_group_front_train.jpg"],
+      "camera": "dolly-in lento wide→medium, altura dos olhos",
+      "voiceover": { "text": "Vamos lembrar?", "speaker": "LUMA", "start": 0.5, "end": 1.8, "file": "audio/01_luma_vamos_lembrar.mp3" },
+      "notes": "BGM alegre entra suave."
+    },
+    {
+      "scene_id": "shot02", "scene_name": "Cor VERMELHA", "type": "animation",
+      "start_time": 4, "end_time": 8.5, "duration": 4.5,
+      "description": "Emblema circular vermelho brilhante surge com burst de sparkles; Tico aponta; pausa para a criança repetir.",
+      "elements": ["keyframes/02_red_tico.jpg"],
+      "camera": "medium close-up, push-in leve",
+      "voiceover": { "text": "Vermelho!", "speaker": "TICO", "start": 4.8, "end": 5.6, "file": "audio/02_tico_vermelho.mp3" },
+      "audio_sfx": [{ "file": "audio/sfx_sparkle_chime.mp3", "start": 4.1 }],
+      "notes": "Pausa visual 5.6–8.5 (pedagógica)."
+    },
+    {
+      "scene_id": "shot03", "scene_name": "Cor AZUL", "type": "animation",
+      "start_time": 8.5, "end_time": 13, "duration": 4.5,
+      "description": "Emblema azul brilhante surge com sparkles; Bibi aponta com as duas patinhas; pausa.",
+      "elements": ["keyframes/03_blue_bibi.jpg"],
+      "camera": "medium close-up, push-in leve",
+      "voiceover": { "text": "Azul!", "speaker": "BIBI", "start": 9.3, "end": 10.1, "file": "audio/03_bibi_azul.mp3" },
+      "audio_sfx": [{ "file": "audio/sfx_sparkle_chime.mp3", "start": 8.6 }],
+      "notes": "Pausa visual 10.1–13.0."
+    },
+    {
+      "scene_id": "shot04", "scene_name": "Cor AMARELA", "type": "animation",
+      "start_time": 13, "end_time": 17.5, "duration": 4.5,
+      "description": "Emblema amarelo brilhante surge com sparkles; Nino aponta com uma pata, cabeça inclinada; pausa.",
+      "elements": ["keyframes/04_yellow_nino.jpg"],
+      "camera": "medium close-up, push-in leve",
+      "voiceover": { "text": "Amarelo!", "speaker": "NINO", "start": 13.8, "end": 14.6, "file": "audio/04_nino_amarelo.mp3" },
+      "audio_sfx": [{ "file": "audio/sfx_sparkle_chime.mp3", "start": 13.1 }],
+      "notes": "Pausa visual 14.6–17.5."
+    },
+    {
+      "scene_id": "shot05", "scene_name": "Cor ROXA", "type": "animation",
+      "start_time": 17.5, "end_time": 22, "duration": 4.5,
+      "description": "Emblema roxo brilhante surge com sparkles; Luma (única vaga-lume) flutua e aponta; pausa.",
+      "elements": ["keyframes/05_purple_luma.jpg"],
+      "camera": "medium close-up, push-in leve",
+      "voiceover": { "text": "Roxo!", "speaker": "LUMA", "start": 18.3, "end": 19.1, "file": "audio/05_luma_roxo.mp3" },
+      "audio_sfx": [{ "file": "audio/sfx_sparkle_chime.mp3", "start": 17.6 }],
+      "notes": "Pausa visual 19.1–22.0."
+    },
+    {
+      "scene_id": "shot06", "scene_name": "Celebração em grupo", "type": "animation",
+      "start_time": 22, "end_time": 26, "duration": 4,
+      "description": "Os quatro pulam juntos com confete; lâmpadas do trem piscam suavemente 2x.",
+      "elements": ["keyframes/06_celebration_jump.jpg"],
+      "camera": "medium group, ângulo levemente baixo",
+      "voiceover": { "text": "Muito bem!", "speaker": "TODOS", "start": 22.3, "end": 23.3, "file": "audio/mixed/08_todos_muito_bem.mp3" },
+      "notes": "Coro atual = Tico+Bibi+Nino (mix 3 vozes); ver STATUS no shot-list p/ versão 4 vozes."
+    },
+    {
+      "scene_id": "shot07", "scene_name": "Bibi pergunta à câmera", "type": "animation",
+      "start_time": 26, "end_time": 31, "duration": 5,
+      "description": "Bibi em close olha direto à lente e pergunta; todos olham à câmera; pausa de interação.",
+      "elements": ["keyframes/07_bibi_camera.jpg"],
+      "camera": "close-up eye-level, push-in muito lento",
+      "voiceover": { "text": "Qual foi a sua cor favorita?", "speaker": "BIBI", "start": 26.5, "end": 28.6, "file": "audio/06_bibi_cor_favorita.mp3" },
+      "audio_sfx": [{ "file": "audio/sfx_sparkle_chime.mp3", "start": 29.0, "gain_db": -6 }],
+      "notes": "Pausa interativa 28.8–31.0 (personagens olhando à lente)."
+    },
+    {
+      "scene_id": "shot08", "scene_name": "Nino responde e risadas", "type": "animation",
+      "start_time": 31, "end_time": 34.5, "duration": 3.5,
+      "description": "Nino sorri e diz que a favorita é todas; o grupo ri olhando à câmera.",
+      "elements": ["keyframes/01_group_front_train.jpg"],
+      "camera": "medium group estático, eye-level",
+      "voiceover": { "text": "A minha foi… todas!", "speaker": "NINO", "start": 31.3, "end": 32.6, "file": "audio/07_nino_todas.mp3" },
+      "notes": "Risadas do grupo 32.5+ (nativo Seedance ou SFX)."
+    },
+    {
+      "scene_id": "shot09", "scene_name": "Tchau + apito do trem", "type": "animation",
+      "start_time": 34.5, "end_time": 39.5, "duration": 5,
+      "description": "Os quatro acenam direto à câmera; trem pisca luzes; apito PII! PII! duas vezes.",
+      "elements": ["keyframes/08_wave_goodbye.jpg"],
+      "camera": "medium-wide frontal, sway suave",
+      "voiceover": { "text": "Tchauuuu!", "speaker": "TODOS", "start": 34.9, "end": 36.2, "file": "audio/mixed/09_todos_tchau.mp3", "status": "PENDENTE (cota TTS do turno; gerar na próxima interação)" },
+      "audio_sfx": [{ "file": "audio/sfx_whistle_pii_pii.mp3", "start": 36.6 }],
+      "notes": "Coro de tchau em 4 vozes a renderizar; fallback: BGM swell + apito."
+    },
+    {
+      "scene_id": "shot10", "scene_name": "Final cinematográfico", "type": "animation",
+      "start_time": 39.5, "end_time": 46.5, "duration": 7,
+      "description": "Plano wide: trem parte devagar pela floresta colorida rumo ao pôr do sol; os quatro acenam da plataforma; fade quente.",
+      "elements": ["keyframes/09_wide_ending.jpg"],
+      "camera": "wide, crane-up + pull-back lento",
+      "voiceover": null,
+      "notes": "BGM cresce p/ acorde final; fade-out 45.5–46.5."
+    }
+  ]
+}
