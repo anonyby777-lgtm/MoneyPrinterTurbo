@@ -46,3 +46,6 @@ htmlcov/
 # Assets gerados por render de vídeo (saída local)
 /output/
 /.venv/
+
+# permite versionar o video entregue
+!/videos/
