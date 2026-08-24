@@ -1,0 +1,5 @@
+# vídeos finais (grandes)
+out/
+# intermediários de render
+render/var/*/work/
+*.mp4

@@ -1,0 +1,176 @@
+[
+ {
+  "file": "GTA6_Jason_Carro_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 1,
+  "faces": [
+   {
+    "x": 0.441,
+    "y": 0.397,
+    "w": 0.233,
+    "h": 0.108
+   }
+  ],
+  "night": true,
+  "neon": 38.3,
+  "guess": "lucia",
+  "hair": "darkTop=1.00 darkSide=0.55"
+ },
+ {
+  "file": "GTA6_Jason_Celular_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 1,
+  "faces": [
+   {
+    "x": 0.408,
+    "y": 0.409,
+    "w": 0.142,
+    "h": 0.065
+   }
+  ],
+  "night": true,
+  "neon": 130.3,
+  "guess": "jason",
+  "hair": "darkTop=0.55 darkSide=0.26"
+ },
+ {
+  "file": "GTA6_Jason_Lucia_Danca_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 0,
+  "faces": [],
+  "night": true,
+  "neon": 52.1,
+  "guess": "none",
+  "hair": ""
+ },
+ {
+  "file": "GTA6_Jason_Lucia_Danca_Noite_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 1,
+  "faces": [
+   {
+    "x": 0.21,
+    "y": 0.432,
+    "w": 0.219,
+    "h": 0.101
+   }
+  ],
+  "night": true,
+  "neon": 134.4,
+  "guess": "lucia",
+  "hair": "darkTop=1.00 darkSide=0.98"
+ },
+ {
+  "file": "GTA6_Jason_Lucia_Noite_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 1,
+  "faces": [
+   {
+    "x": 0.193,
+    "y": 0.428,
+    "w": 0.102,
+    "h": 0.047
+   }
+  ],
+  "night": true,
+  "neon": 106.8,
+  "guess": "lucia",
+  "hair": "darkTop=0.88 darkSide=0.67"
+ },
+ {
+  "file": "GTA6_Leonida_Keys_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 0,
+  "faces": [],
+  "night": true,
+  "neon": 93.7,
+  "guess": "none",
+  "hair": ""
+ },
+ {
+  "file": "GTA6_Lucia_Dinheiro_01.png",
+  "w": 641,
+  "h": 1792,
+  "ar": 0.358,
+  "nfaces": 1,
+  "faces": [
+   {
+    "x": 0.43,
+    "y": 0.412,
+    "w": 0.235,
+    "h": 0.084
+   }
+  ],
+  "night": true,
+  "neon": 74.8,
+  "guess": "jason",
+  "hair": "darkTop=1.00 darkSide=0.07"
+ },
+ {
+  "file": "GTA6_Lucia_Jason_Assalto_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 0,
+  "faces": [],
+  "night": true,
+  "neon": 27.2,
+  "guess": "none",
+  "hair": ""
+ },
+ {
+  "file": "GTA6_Lucia_Treino_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 3,
+  "faces": [
+   {
+    "x": 0.591,
+    "y": 0.425,
+    "w": 0.167,
+    "h": 0.077
+   },
+   {
+    "x": 0.622,
+    "y": 0.464,
+    "w": 0.117,
+    "h": 0.054
+   },
+   {
+    "x": 0.707,
+    "y": 0.38,
+    "w": 0.096,
+    "h": 0.044
+   }
+  ],
+  "night": true,
+  "neon": 82.6,
+  "guess": "duo",
+  "hair": ""
+ },
+ {
+  "file": "GTA6_Vice_City_Noite_01.png",
+  "w": 828,
+  "h": 1792,
+  "ar": 0.462,
+  "nfaces": 0,
+  "faces": [],
+  "night": true,
+  "neon": 83.5,
+  "guess": "none",
+  "hair": ""
+ }
+]
