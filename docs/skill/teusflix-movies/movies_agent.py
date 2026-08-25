@@ -180,6 +180,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--script",
+        default="",
+        help=(
+            "ready-made narration script; skips LLM script generation so no LLM "
+            "API key is required (combine with --video-source local and "
+            "--video-materials to run fully keyless)"
+        ),
+    )
+    parser.add_argument(
         "--root",
         type=Path,
         default=DEFAULT_ROOT,
@@ -194,6 +203,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     args.movie = (args.movie or args.subject or "").strip()
     if not args.movie:
         parser.error("--movie (or --subject) cannot be empty")
+    args.script = args.script.strip()
     if args.cli_args and args.cli_args[0] == "--":
         args.cli_args = args.cli_args[1:]
     return args
@@ -385,20 +395,31 @@ def has_cli_option(cli_args: list[str], option: str) -> bool:
     return any(item == option or item.startswith(f"{option}=") for item in cli_args)
 
 
-def missing_config(config_path: Path, cli_args: list[str]) -> tuple[str, list[str]]:
-    """Return the active provider and only the fields required by this run."""
+def missing_config(
+    config_path: Path,
+    cli_args: list[str],
+    provided_script: str = "",
+) -> tuple[str, list[str]]:
+    """Return the active provider and only the fields required by this run.
+
+    A ready-made ``provided_script`` skips LLM generation, so no LLM key is
+    required. A ``--video-source local`` run has no material-provider API key
+    requirement. This lets the skill run fully keyless with a provided script
+    and local materials.
+    """
     text = config_path.read_text(encoding="utf-8")
     provider = _plain_config_value(text, "llm_provider") or "moonshot"
     missing: list[str] = []
-    if provider not in KEYLESS_LLM_PROVIDERS and not _has_configured_value(
-        _plain_config_value(text, f"{provider}_api_key")
-    ):
-        missing.append(f"{provider}_api_key")
-    if provider == CUSTOM_OPENAI_PROVIDER:
-        for suffix in ("base_url", "model_name"):
-            field = f"{provider}_{suffix}"
-            if not _has_configured_value(_plain_config_value(text, field)):
-                missing.append(field)
+    if not provided_script:
+        if provider not in KEYLESS_LLM_PROVIDERS and not _has_configured_value(
+            _plain_config_value(text, f"{provider}_api_key")
+        ):
+            missing.append(f"{provider}_api_key")
+        if provider == CUSTOM_OPENAI_PROVIDER:
+            for suffix in ("base_url", "model_name"):
+                field = f"{provider}_{suffix}"
+                if not _has_configured_value(_plain_config_value(text, field)):
+                    missing.append(field)
 
     source = selected_video_source(cli_args)
     if source not in SUPPORTED_SOURCES:
@@ -549,19 +570,29 @@ def run_checked(command: list[str], *, cwd: Path) -> None:
         raise SkillError(f"dependency installation failed with exit code {result.returncode}")
 
 
-def build_cli_defaults(cli_args: list[str], style: str) -> list[str]:
-    """Return Teusflix-style CLI defaults that the user has not overridden."""
+def build_cli_defaults(
+    cli_args: list[str],
+    style: str,
+    provided_script: str = "",
+) -> list[str]:
+    """Return Teusflix-style CLI defaults that the user has not overridden.
+
+    LLM-only defaults (language, paragraph count, and the style-specific system
+    prompt) are omitted when a ready-made ``provided_script`` skips script
+    generation, matching the arguments the CLI actually consumes.
+    """
     if style not in STYLES:
         raise SkillError(f"unknown style: {style}")
     defaults: list[str] = []
     if not has_cli_option(cli_args, "--video-aspect"):
         defaults += ["--video-aspect", DEFAULT_ASPECT]
-    if not has_cli_option(cli_args, "--video-language"):
-        defaults += ["--video-language", DEFAULT_LANGUAGE]
-    if not has_cli_option(cli_args, "--paragraph-number"):
-        defaults += ["--paragraph-number", str(DEFAULT_PARAGRAPHS)]
-    if not has_cli_option(cli_args, "--custom-system-prompt"):
-        defaults += ["--custom-system-prompt", STYLES[style]["prompt"]]
+    if not provided_script:
+        if not has_cli_option(cli_args, "--video-language"):
+            defaults += ["--video-language", DEFAULT_LANGUAGE]
+        if not has_cli_option(cli_args, "--paragraph-number"):
+            defaults += ["--paragraph-number", str(DEFAULT_PARAGRAPHS)]
+        if not has_cli_option(cli_args, "--custom-system-prompt"):
+            defaults += ["--custom-system-prompt", STYLES[style]["prompt"]]
     if not has_cli_option(cli_args, "--voice-name"):
         defaults += ["--voice-name", DEFAULT_VOICE_NAME]
     return defaults
@@ -572,8 +603,14 @@ def generate_video(
     movie: str,
     style: str,
     cli_args: list[str],
+    script: str = "",
 ) -> tuple[list[Path], Path, Path, Path]:
-    """Run one traceable CLI task and return only its final video files."""
+    """Run one traceable CLI task and return only its final video files.
+
+    A provided ``script`` skips LLM script generation entirely, so the run does
+    not need an LLM API key. Combined with ``--video-source local`` and
+    ``--video-materials`` the whole generation can run without any API key.
+    """
     uv = shutil.which("uv")
     if not uv:
         raise SkillError("uv was not found; reopen the terminal or add uv to PATH")
@@ -590,19 +627,22 @@ def generate_video(
             "status": "running",
             "subject": movie,
             "style": style,
+            "script_provided": bool(script),
             "task_id": task_id,
             "task_dir": str(task_dir.resolve()),
             "log_file": str(log_path.resolve()),
             "video_files": [],
         },
     )
-    defaults = build_cli_defaults(cli_args, style)
+    defaults = build_cli_defaults(cli_args, style, provided_script=script)
+    script_args = ["--video-script", script] if script else []
     command = [
         uv,
         "run",
         "python",
         "cli.py",
         *defaults,
+        *script_args,
         *cli_args,
         "--video-subject",
         movie,
@@ -638,6 +678,7 @@ def generate_video(
                 "status": "failed",
                 "subject": movie,
                 "style": style,
+                "script_provided": bool(script),
                 "task_id": task_id,
                 "task_dir": str(task_dir.resolve()),
                 "log_file": str(log_path.resolve()),
@@ -660,6 +701,7 @@ def generate_video(
                 "status": "failed",
                 "subject": movie,
                 "style": style,
+                "script_provided": bool(script),
                 "task_id": task_id,
                 "task_dir": str(task_dir.resolve()),
                 "log_file": str(log_path.resolve()),
@@ -674,6 +716,7 @@ def generate_video(
             "status": "completed",
             "subject": movie,
             "style": style,
+            "script_provided": bool(script),
             "task_id": task_id,
             "task_dir": str(task_dir.resolve()),
             "log_file": str(log_path.resolve()),
@@ -691,7 +734,9 @@ def main(argv: list[str] | None = None) -> int:
         config_path = ensure_config(root)
         apply_environment_config(config_path)
         reuse_existing_llm_provider(config_path)
-        provider, missing = missing_config(config_path, args.cli_args)
+        provider, missing = missing_config(
+            config_path, args.cli_args, provided_script=args.script
+        )
         if missing:
             write_result_manifest(
                 root,
@@ -699,6 +744,7 @@ def main(argv: list[str] | None = None) -> int:
                     "status": "needs_input",
                     "subject": args.movie,
                     "style": args.style,
+                    "script_provided": bool(args.script),
                     "missing": missing,
                 },
             )
@@ -710,12 +756,13 @@ def main(argv: list[str] | None = None) -> int:
                     "status": "needs_input",
                     "subject": args.movie,
                     "style": args.style,
+                    "script_provided": bool(args.script),
                     "invalid": ["pexels_api_keys"],
                 },
             )
             return report_invalid_pexels_config()
         videos, task_dir, log_path, result_path = generate_video(
-            root, args.movie, args.style, args.cli_args
+            root, args.movie, args.style, args.cli_args, script=args.script
         )
     except (OSError, SkillError, urllib.error.URLError, zipfile.BadZipFile) as exc:
         print(f"MPT_ERROR={exc}", file=sys.stderr)

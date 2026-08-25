@@ -233,6 +233,66 @@ class TestMoviesAgentSkill(unittest.TestCase):
         self.assertIn(f"PEXELS_API_KEY_URL={movies_agent.PEXELS_API_KEY_URL}", text)
         self.assertNotIn("LLM_PROVIDER_OPTIONS_BEGIN", text)
 
+    def test_provided_script_skips_llm_only_defaults(self):
+        defaults = movies_agent.build_cli_defaults(
+            [], "resumo", provided_script="Roteiro pronto em pt-BR."
+        )
+        self.assertIn("--video-aspect", defaults)
+        self.assertIn("9:16", defaults)
+        self.assertIn("--voice-name", defaults)
+        self.assertNotIn("--video-language", defaults)
+        self.assertNotIn("--paragraph-number", defaults)
+        self.assertNotIn("--custom-system-prompt", defaults)
+
+    def test_provided_script_and_local_source_require_no_api_keys(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            config_path = Path(temp_dir) / "config.toml"
+            config_path.write_text(MINIMAL_CONFIG, encoding="utf-8")
+            provider, missing = movies_agent.missing_config(
+                config_path,
+                ["--video-source", "local", "--video-materials", "clip.mp4"],
+                provided_script="Roteiro pronto em pt-BR.",
+            )
+            self.assertEqual(missing, [])
+            self.assertEqual(provider, "moonshot")
+
+    def test_provided_script_is_forwarded_and_style_prompt_is_not(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            task_id = "12345678-1234-1234-1234-123456789abc"
+            script = "Gancho. A história de Vingadores: Ultimato."
+
+            def finish_cli(command, **kwargs):
+                task_dir = root / "storage" / "tasks" / task_id
+                task_dir.mkdir(parents=True)
+                (task_dir / "final-1.mp4").write_bytes(b"video")
+                return SimpleNamespace(returncode=0)
+
+            with (
+                patch.object(movies_agent.shutil, "which", return_value="uv"),
+                patch.object(movies_agent, "run_checked"),
+                patch.object(movies_agent.uuid, "uuid4", return_value=task_id),
+                patch.object(
+                    movies_agent.subprocess, "run", side_effect=finish_cli
+                ) as run_mock,
+            ):
+                videos, task_dir, log_path, result_path = movies_agent.generate_video(
+                    root,
+                    "Vingadores: Ultimato",
+                    "resumo",
+                    ["--video-source", "local", "--video-materials", "clip.mp4"],
+                    script=script,
+                )
+
+            self.assertEqual(videos, [(task_dir / "final-1.mp4").resolve()])
+            command = run_mock.call_args.args[0]
+            self.assertIn("--video-script", command)
+            self.assertIn(script, command)
+            self.assertNotIn("--custom-system-prompt", command)
+            self.assertNotIn("--video-language", command)
+            result = json.loads(result_path.read_text(encoding="utf-8"))
+            self.assertTrue(result["script_provided"])
+
     def test_zip_extraction_rejects_parent_directory_escape(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             archive_path = Path(temp_dir) / "unsafe.zip"

@@ -75,6 +75,18 @@ On Windows, do not try absolute backslash paths, absolute forward-slash paths, o
 
 Do not use Docker, Conda, system pip, or a manually managed virtual environment.
 
+### Keyless generation (no API keys)
+
+When the user provides the narration script themselves, pass it with `--script`. This skips LLM script generation, so no LLM key is required. Combining `--script` with `--video-source local --video-materials "<path>"` also removes the material-provider key (Pexels) requirement, so the whole run needs no API keys at all:
+
+```bash
+uv run --no-project --python 3.11 python movies_agent.py --movie "Vingadores: Ultimato" \
+  --script "<complete Portuguese narration script>" \
+  --video-source local --video-materials "<absolute path to a local mp4>"
+```
+
+Write the provided script in Brazilian Portuguese, as a single narration block without markdown or title. TTS, subtitles, and the final render still run normally. If the user gives you a clip, place it under `storage/local_videos/` (gitignored) or pass an absolute path, and never add it to a commit or pull request.
+
 ## Exit Handling
 
 ### Exit code 0: deliver the result
