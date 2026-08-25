@@ -205,6 +205,13 @@ Use this Skill: https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/ma
 Create a video with the topic "How AI is changing everyday life."
 ```
 
+A dedicated movie-recap short-video Skill is also available, styled after the Teusflix channel (Brazilian Portuguese narration, 9:16 portrait, subtitles):
+
+```text
+Use this Skill: https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/skill/teusflix-movies/SKILL.md
+Create a movie recap short for "The Godfather".
+```
+
 ### Run in Google Colab
 
 Want to try MoneyPrinterTurbo without setting up a local environment? Run it directly in Google Colab!

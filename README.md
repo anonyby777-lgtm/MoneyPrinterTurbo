@@ -215,6 +215,13 @@
 帮我生成一个主题为“人工智能如何改变普通人的日常生活”的视频。
 ```
 
+另外还提供了一个专门生成「电影解说」竖屏短片的 Skill，风格参考 Teusflix（巴西葡萄牙语旁白 + 9:16 + 字幕）：
+
+```text
+使用这个 Skill：https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/skill/teusflix-movies/SKILL.md
+帮我生成一个《教父》的电影解说短视频。
+```
+
 ### 在 Google Colab 中运行
 
 免去本地环境配置，点击直接在 Google Colab 中快速体验 MoneyPrinterTurbo

@@ -204,6 +204,13 @@ Use this Skill: https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/ma
 Create a video with the topic "How AI is changing everyday life."
 ```
 
+Teusflix チャンネルのスタイル（ブラジルポルトガル語ナレーション + 9:16 + 字幕）に特化した「映画解説」縦型ショート動画用の Skill も用意しています。
+
+```text
+Use this Skill: https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/skill/teusflix-movies/SKILL.md
+Create a movie recap short for "The Godfather".
+```
+
 ### Google Colab で実行する
 
 ローカル環境を用意せずに MoneyPrinterTurbo を試したいですか？ Google Colab で直接実行できます！
