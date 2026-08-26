@@ -1,5 +1,18 @@
 # GTA1 — 5 shorts
 
+## Edit moderna (`edit_moderna/`)
+
+Corte novo com os arquivos enviados (gameplay GTA + praia 9:16 + trailer). Imagens inteiras, sem zoom e sem música — só as 5 narrações.
+
+| Arquivo | Tema | Duração |
+|---|---|---|
+| `edit_moderna/GTA6_edit_moderna.mp4` | Edit completa (5 partes) | 5:25 |
+| `edit_moderna/GTA6_moderna_01.mp4` | Por que o hype morreu? | 1:01 |
+| `edit_moderna/GTA6_moderna_02.mp4` | Os vazamentos impressionam? | 1:03 |
+| `edit_moderna/GTA6_moderna_03.mp4` | A internet defende o leaker | 1:05 |
+| `edit_moderna/GTA6_moderna_04.mp4` | 13 anos podem ser o problema | 1:09 |
+| `edit_moderna/GTA6_moderna_05.mp4` | O Online salvou ou prendeu? | 1:05 |
+
 ## Remake oficial (`shorts_official/`)
 
 Montados com mídia promocional oficial da Rockstar: artes de Jason Duval, Lucia Caminos e Real Dimez, key art de Vice City, clips 4K dos personagens e o Trailer 1 oficial.
