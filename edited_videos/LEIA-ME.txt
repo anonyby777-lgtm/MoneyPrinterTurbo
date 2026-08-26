@@ -1,0 +1,16 @@
+VÍDEOS EDITADOS — PORTUGUÊS DO BRASIL
+
+Os quatro vídeos receberam:
+- narração adaptada para português do Brasil;
+- voz sintética infantil e bem-humorada escolhida na prévia;
+- legendas em português gravadas diretamente na imagem;
+- título inicial traduzido;
+- áudio original mantido bem baixo como ambientação.
+
+ARQUIVOS
+1. 01-simulador-gordura-ptbr.mp4
+2. 02-cookie-clicker-ptbr.mp4
+3. 03-simulador-velocidade-ptbr.mp4
+4. 04-minecraft-ia-ptbr.mp4
+
+A pasta "legendas" contém também as legendas separadas em formato SRT.

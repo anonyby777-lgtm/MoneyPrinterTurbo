@@ -1,0 +1,59 @@
+1
+00:00:00,450 --> 00:00:03,063
+Hoje eu fiz um simulador de velocidade
+
+2
+00:00:03,063 --> 00:00:05,053
+usando apenas inteligência artificial.
+
+3
+00:00:05,053 --> 00:00:06,978
+Comecei pedindo uma bolinha brilhante
+
+4
+00:00:06,978 --> 00:00:10,688
+que aumenta a velocidade quando o personagem encosta nela.
+
+5
+00:00:10,688 --> 00:00:13,988
+No começo eu andava igual uma tartaruga com sono,
+
+6
+00:00:13,988 --> 00:00:16,666
+mas cada esfera dava mais pontos.
+
+7
+00:00:16,666 --> 00:00:19,967
+Depois criei um contador bonito no alto da tela
+
+8
+00:00:19,967 --> 00:00:22,989
+e espalhei várias luzes coloridas pelo mapa.
+
+9
+00:00:22,989 --> 00:00:25,258
+A inteligência artificial ajustou os efeitos,
+
+10
+00:00:25,258 --> 00:00:28,968
+os valores e deixou tudo cada vez mais rápido.
+
+11
+00:00:28,968 --> 00:00:31,237
+Em poucos segundos, o bonequinho virou
+
+12
+00:00:31,237 --> 00:00:32,883
+um foguete desgovernado.
+
+13
+00:00:32,883 --> 00:00:34,808
+Se você encostasse nessas bolinhas,
+
+14
+00:00:34,808 --> 00:00:36,454
+qual velocidade conseguiria?
+
+15
+00:00:36,454 --> 00:00:38,100
+Escreve nos comentários!

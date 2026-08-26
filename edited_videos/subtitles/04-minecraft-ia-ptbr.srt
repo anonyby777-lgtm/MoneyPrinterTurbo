@@ -1,0 +1,59 @@
+1
+00:00:00,450 --> 00:00:04,240
+Hoje eu tentei criar um jogo parecido com Minecraft
+
+2
+00:00:04,240 --> 00:00:06,525
+usando só inteligência artificial.
+
+3
+00:00:06,525 --> 00:00:09,525
+Primeiro pedi uma câmera em primeira pessoa
+
+4
+00:00:09,525 --> 00:00:13,390
+e uma mira bem no meio da tela.
+
+5
+00:00:13,390 --> 00:00:17,575
+Depois mandei a inteligência artificial criar um mundo de blocos,
+
+6
+00:00:17,575 --> 00:00:21,835
+com água, areia, árvores e um gramado bem quadradinho.
+
+7
+00:00:21,835 --> 00:00:24,440
+Aí veio a parte mais importante:
+
+8
+00:00:24,440 --> 00:00:28,305
+quebrar blocos, coletar tudo e guardar no inventário.
+
+9
+00:00:28,305 --> 00:00:31,305
+Também pedi blocos para colocar de volta,
+
+10
+00:00:31,305 --> 00:00:33,119
+porque destruir é divertido,
+
+11
+00:00:33,119 --> 00:00:36,985
+mas construir uma árvore torta é muito melhor.
+
+12
+00:00:36,985 --> 00:00:38,800
+No final, consegui montar
+
+13
+00:00:38,800 --> 00:00:41,085
+uma estrutura completamente esquisita.
+
+14
+00:00:41,085 --> 00:00:43,765
+Não ficou Minecraft, ficou Minecriança!
+
+15
+00:00:43,765 --> 00:00:46,050
+Você jogaria essa maluquice?
