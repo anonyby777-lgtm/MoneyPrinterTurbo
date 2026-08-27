@@ -1,0 +1,127 @@
+1
+00:00:00,450 --> 00:00:03,997
+Today I decided to make a Spider-Man game using only
+
+2
+00:00:03,997 --> 00:00:05,222
+artificial intelligence.
+
+3
+00:00:05,222 --> 00:00:08,769
+I started with an empty Roblox city and asked for
+
+4
+00:00:08,769 --> 00:00:10,669
+a giant spider-web checkpoint.
+
+5
+00:00:10,669 --> 00:00:13,245
+Then came the important part: swinging.
+
+6
+00:00:13,245 --> 00:00:16,454
+My first prompt created a web that attached to
+
+7
+00:00:16,454 --> 00:00:19,663
+buildings, but the movement looked like a shopping bag
+
+8
+00:00:19,663 --> 00:00:21,225
+in a hurricane.
+
+9
+00:00:21,225 --> 00:00:24,772
+I asked the AI to fix the direction, the speed,
+
+10
+00:00:24,772 --> 00:00:26,335
+and the camera.
+
+11
+00:00:26,335 --> 00:00:29,882
+One web was not enough, so I added a second
+
+12
+00:00:29,882 --> 00:00:31,022
+one.
+
+13
+00:00:31,022 --> 00:00:34,569
+Suddenly the hero could swing with both hands, and it
+
+14
+00:00:34,569 --> 00:00:36,131
+looked surprisingly cool.
+
+15
+00:00:36,131 --> 00:00:39,678
+Of course, it also threw him into walls, rooftops, and
+
+16
+00:00:39,678 --> 00:00:40,903
+empty space.
+
+17
+00:00:40,903 --> 00:00:44,492
+Next I added animations, momentum, and a new rule.
+
+18
+00:00:44,492 --> 00:00:48,039
+When I pressed the space bar while swinging, the web
+
+19
+00:00:48,039 --> 00:00:49,939
+launched the player forward.
+
+20
+00:00:49,939 --> 00:00:52,810
+That made traveling faster and every crash much
+
+21
+00:00:52,810 --> 00:00:53,950
+funnier.
+
+22
+00:00:53,950 --> 00:00:56,822
+After several prompts, the webs could attach to
+
+23
+00:00:56,822 --> 00:00:59,693
+different buildings, release at the right time, and
+
+24
+00:00:59,693 --> 00:01:02,607
+carry the character across the entire city.
+
+25
+00:01:02,607 --> 00:01:04,845
+Sometimes the AI understood perfectly.
+
+26
+00:01:04,845 --> 00:01:08,392
+Other times I had to explain: please do not send
+
+27
+00:01:08,392 --> 00:01:10,630
+my player to the moon.
+
+28
+00:01:10,630 --> 00:01:13,839
+By the end, the basic Spider-Man movement was finally
+
+29
+00:01:13,839 --> 00:01:14,979
+playable.
+
+30
+00:01:14,979 --> 00:01:18,568
+It was not perfect, but it was definitely chaotic.
+
+31
+00:01:18,568 --> 00:01:22,115
+Would you use AI prompts to build a game? Tell
+
+32
+00:01:22,115 --> 00:01:25,367
+me, and watch part two for the superpowers!

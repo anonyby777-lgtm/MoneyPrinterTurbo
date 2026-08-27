@@ -1,0 +1,91 @@
+1
+00:00:00,450 --> 00:00:04,224
+Welcome back to part two of building a Spider-Man game
+
+2
+00:00:04,224 --> 00:00:06,246
+using only artificial intelligence.
+
+3
+00:00:06,246 --> 00:00:09,661
+The web swinging already worked, but our tiny hero
+
+4
+00:00:09,661 --> 00:00:12,042
+still needed real superhero moves.
+
+5
+00:00:12,042 --> 00:00:15,862
+First I asked the AI for a super jump.
+
+6
+00:00:15,862 --> 00:00:19,636
+It launched him into the sky and made a giant
+
+7
+00:00:19,636 --> 00:00:21,658
+shockwave when he landed.
+
+8
+00:00:21,658 --> 00:00:24,039
+Very subtle. Totally not dangerous.
+
+9
+00:00:24,039 --> 00:00:27,814
+Next came a ground slam, because every hero needs a
+
+10
+00:00:27,814 --> 00:00:30,554
+button for dramatically smashing the floor.
+
+11
+00:00:30,554 --> 00:00:34,329
+Then I added a power that pulls enemies closer and
+
+12
+00:00:34,329 --> 00:00:36,710
+throws a huge energy ball.
+
+13
+00:00:36,710 --> 00:00:39,765
+The first test looked like black spaghetti exploded
+
+14
+00:00:39,765 --> 00:00:42,866
+across the city, but somehow it worked.
+
+15
+00:00:42,866 --> 00:00:45,921
+For the ultimate ability, the character charged up,
+
+16
+00:00:45,921 --> 00:00:49,021
+turned bright green, and became ridiculously strong.
+
+17
+00:00:49,021 --> 00:00:52,796
+Finally I improved the web movement so he could zip
+
+18
+00:00:52,796 --> 00:00:55,851
+between buildings, fly forward, and land with another
+
+19
+00:00:55,851 --> 00:00:57,154
+enormous blast.
+
+20
+00:00:57,154 --> 00:01:00,569
+Now he is less Spider-Man and more Spider-Potato with
+
+21
+00:01:00,569 --> 00:01:01,872
+unlimited power.
+
+22
+00:01:01,872 --> 00:01:05,287
+Which ability should I add next? Comment your wildest
+
+23
+00:01:05,287 --> 00:01:06,500
+idea!

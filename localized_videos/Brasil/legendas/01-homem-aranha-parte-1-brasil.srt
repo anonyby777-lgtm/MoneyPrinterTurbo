@@ -1,0 +1,135 @@
+1
+00:00:00,450 --> 00:00:03,513
+Hoje eu decidi criar um jogo do Homem-Aranha usando
+
+2
+00:00:03,513 --> 00:00:05,004
+apenas inteligência artificial.
+
+3
+00:00:05,004 --> 00:00:08,390
+Comecei com uma cidade vazia no Roblox e pedi um
+
+4
+00:00:08,390 --> 00:00:10,848
+ponto inicial com uma teia gigante.
+
+5
+00:00:10,848 --> 00:00:13,589
+Depois veio a parte mais importante: balançar nas
+
+6
+00:00:13,589 --> 00:00:14,677
+teias.
+
+7
+00:00:14,677 --> 00:00:17,740
+Meu primeiro comando criou uma teia presa aos prédios,
+
+8
+00:00:17,740 --> 00:00:21,125
+mas o movimento parecia uma sacola voando no meio de
+
+9
+00:00:21,125 --> 00:00:22,294
+um furacão.
+
+10
+00:00:22,294 --> 00:00:25,679
+Pedi para a IA corrigir a direção, a velocidade e
+
+11
+00:00:25,679 --> 00:00:26,848
+a câmera.
+
+12
+00:00:26,848 --> 00:00:29,588
+Uma teia não era suficiente, então coloquei uma
+
+13
+00:00:29,588 --> 00:00:30,677
+segunda.
+
+14
+00:00:30,677 --> 00:00:33,740
+De repente, o herói conseguia balançar com as duas
+
+15
+00:00:33,740 --> 00:00:35,876
+mãos, e ficou surpreendentemente legal.
+
+16
+00:00:35,876 --> 00:00:39,261
+Claro que ele também batia nas paredes, nos telhados e
+
+17
+00:00:39,261 --> 00:00:41,397
+voava para o espaço vazio.
+
+18
+00:00:41,397 --> 00:00:44,500
+Depois adicionei animações, impulso e uma regra nova.
+
+19
+00:00:44,500 --> 00:00:47,886
+Quando eu apertava a barra de espaço durante o balanço,
+
+20
+00:00:47,886 --> 00:00:50,989
+a teia lançava o jogador para a frente.
+
+21
+00:00:50,989 --> 00:00:54,374
+Isso deixou a viagem mais rápida e cada acidente muito
+
+22
+00:00:54,374 --> 00:00:55,543
+mais engraçado.
+
+23
+00:00:55,543 --> 00:00:58,284
+Após vários comandos, as teias conseguiam prender em
+
+24
+00:00:58,284 --> 00:01:01,347
+prédios diferentes, soltar na hora certa e levar o
+
+25
+00:01:01,347 --> 00:01:03,160
+personagem pela cidade inteira.
+
+26
+00:01:03,160 --> 00:01:05,578
+Às vezes, a inteligência artificial entendia tudo
+
+27
+00:01:05,578 --> 00:01:06,666
+perfeitamente.
+
+28
+00:01:06,666 --> 00:01:09,729
+Em outras, eu precisava explicar: por favor, não mande
+
+29
+00:01:09,729 --> 00:01:11,865
+meu jogador para a Lua.
+
+30
+00:01:11,865 --> 00:01:14,606
+No final, o movimento básico do Homem-Aranha finalmente
+
+31
+00:01:14,606 --> 00:01:15,775
+ficou jogável.
+
+32
+00:01:15,775 --> 00:01:18,556
+Não estava perfeito, mas estava completamente caótico.
+
+33
+00:01:18,556 --> 00:01:21,941
+Você usaria comandos de IA para criar um jogo? Comenta
+
+34
+00:01:21,941 --> 00:01:25,367
+e assiste à parte dois para ver os superpoderes!
