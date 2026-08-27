@@ -1,38 +1,7 @@
-# GTA1 — 5 shorts
+# GTA1
 
-## Edit moderna (`edit_moderna/`)
+Arquivos de base enviados:
 
-Corte novo com os arquivos enviados (gameplay GTA + praia 9:16 + trailer). Imagens inteiras, sem zoom e sem música — só as 5 narrações.
-
-| Arquivo | Tema | Duração |
-|---|---|---|
-| `edit_moderna/GTA6_edit_moderna.mp4` | Edit completa (5 partes) | 5:25 |
-| `edit_moderna/GTA6_moderna_01.mp4` | Por que o hype morreu? | 1:01 |
-| `edit_moderna/GTA6_moderna_02.mp4` | Os vazamentos impressionam? | 1:03 |
-| `edit_moderna/GTA6_moderna_03.mp4` | A internet defende o leaker | 1:05 |
-| `edit_moderna/GTA6_moderna_04.mp4` | 13 anos podem ser o problema | 1:09 |
-| `edit_moderna/GTA6_moderna_05.mp4` | O Online salvou ou prendeu? | 1:05 |
-
-## Remake oficial (`shorts_official/`)
-
-Montados com mídia promocional oficial da Rockstar: artes de Jason Duval, Lucia Caminos e Real Dimez, key art de Vice City, clips 4K dos personagens e o Trailer 1 oficial.
-
-| Arquivo | Tema | Duração |
-|---|---|---|
-| `shorts_official/GTA6_official_short_01.mp4` | Por que o hype morreu? | 1:01 |
-| `shorts_official/GTA6_official_short_02.mp4` | Os vazamentos impressionam? | 1:03 |
-| `shorts_official/GTA6_official_short_03.mp4` | A internet defende o leaker | 1:05 |
-| `shorts_official/GTA6_official_short_04.mp4` | 13 anos podem ser o problema | 1:09 |
-| `shorts_official/GTA6_official_short_05.mp4` | O Online salvou ou prendeu? | 1:05 |
-
-## Versão anterior (`shorts/`)
-
-| Arquivo | Tema | Duração |
-|---|---|---|
-| `shorts/GTA6_short_01.mp4` | Por que o hype morreu? | 1:01 |
-| `shorts/GTA6_short_02.mp4` | Os vazamentos impressionam? | 1:03 |
-| `shorts/GTA6_short_03.mp4` | A internet defende o leaker | 1:05 |
-| `shorts/GTA6_short_04.mp4` | 13 anos podem ser o problema | 1:09 |
-| `shorts/GTA6_short_05.mp4` | O Online salvou ou prendeu? | 1:05 |
-
-1080x1920, narração original em velocidade natural, SFX, legendas queimadas. Sem música e sem áudio do trailer.
+- `7EAF5ACA-EE3B-4092-8236-36CBDA0270DE.mp4`
+- `E79D2658-9F78-467D-9E05-15CC97AAAFFE.mp4`
+- `E9825074-A163-46B1-A44F-C7DFBF7790A7.mp4`
