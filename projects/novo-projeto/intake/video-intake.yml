@@ -1,0 +1,127 @@
+# Instalação: copie este arquivo para  .github/workflows/video-intake.yml
+# do repositório que vai receber os vídeos (precisa estar na branch padrão).
+#
+# O que ele faz: quando alguém anexa vídeos numa issue etiquetada "videos"
+# (ou em qualquer issue, se você remover o filtro de label), o workflow baixa
+# os anexos com tools/gh_issue_intake.py, grava em projects/<projeto>/videos/,
+# atualiza o manifest.json, commita/pusha e comenta o resultado na própria issue.
+#
+# Por que via Actions: os anexos de issue ficam em
+# github-production-user-asset-*.s3.amazonaws.com. Ambientes com saída de rede
+# filtrada (sandboxes, proxies corporativos) não conseguem baixá-los; o runner
+# do GitHub consegue.
+name: video-intake
+
+on:
+  issues:
+    types: [opened, edited, labeled]
+  issue_comment:
+    types: [created, edited]
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: "Issue a processar (URL completa ou owner/repo#numero)"
+        required: true
+      project:
+        description: "Pasta do projeto de destino"
+        required: false
+        default: "projects/novo-projeto"
+
+permissions:
+  contents: write   # commitar os vídeos e o manifest
+  issues: read      # ler a issue e os comentários
+  pull-requests: read
+
+concurrency:
+  group: video-intake-${{ github.event.issue.number || github.event.inputs.issue || 'manual' }}
+  cancel-in-progress: false
+
+env:
+  PROJECT_DIR: ${{ github.event.inputs.project || vars.VIDEO_INTAKE_PROJECT || 'projects/novo-projeto' }}
+  # Mude para 'no' se não quiser versionar os vídeos no git (eles ficam só no
+  # runner e o manifest é o único artefato commitado).
+  VERSIONAR: 'yes'
+
+jobs:
+  intake:
+    runs-on: ubuntu-latest
+    # Só roda quando faz sentido: label "videos", disparo manual, ou comentário
+    # de alguém que não seja o próprio bot.
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.issue.labels.*.name, 'videos') ||
+      (github.event_name == 'issue_comment' && github.event.comment.user.type != 'Bot')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # histórico completo: o push do script é um fast-forward normal
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Identificar a issue
+        id: ref
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "issue=${{ github.event.inputs.issue }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "issue=${{ github.event.issue.html_url }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Baixar anexos da issue
+        id: intake
+        continue-on-error: true
+        run: |
+          python3 tools/gh_issue_intake.py \
+            "${{ steps.ref.outputs.issue }}" \
+            --project "$PROJECT_DIR" \
+            --unzip \
+            $([ "$VERSIONAR" = "yes" ] && echo --push) \
+            --json-out /tmp/intake.json
+
+      - name: Resumo
+        if: always()
+        run: |
+          if [ ! -f /tmp/intake.json ]; then
+            echo "intake não produziu resumo (falha antes do download)." | tee /tmp/summary.md
+            exit 0
+          fi
+          python3 - <<'PY' | tee /tmp/summary.md
+          import json
+          d = json.load(open("/tmp/intake.json"))
+          out = ["### 📥 Importação de vídeos", ""]
+          out.append(f"- Issue: {d.get('issue')}")
+          out.append(f"- Projeto: `{d.get('project')}`")
+          out.append(f"- Anexos encontrados: **{d.get('assets_found', 0)}**")
+          saved = d.get("saved") or []
+          out.append(f"- Salvos: **{len(saved)}**")
+          for item in saved:
+              mb = item.get("bytes", 0) / (1024 * 1024)
+              out.append(f"  - `{item.get('file')}` — {mb:.1f} MB — `{(item.get('sha256') or '')[:12]}`")
+          for item in d.get("skipped") or []:
+              out.append(f"- Ignorado: {item}")
+          for item in d.get("oversize") or []:
+              out.append(f"- ⚠️ acima de 90 MB (não cabe no git): `{item}`")
+          out.append(f"- Push: {d.get('push')}")
+          print("\n".join(out))
+          PY
+
+      - name: Comentar na issue
+        if: always() && steps.ref.outputs.issue != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ISSUE="${{ steps.ref.outputs.issue }}"
+          case "$ISSUE" in
+            http*) REF="$ISSUE" ;;
+            *)     REF="${{ github.repository }}#${ISSUE##*#}" ;;
+          esac
+          gh issue comment "$REF" --repo "${{ github.repository }}" --body-file /tmp/summary.md
+
+      - name: Falhar o job se o intake falhou
+        if: steps.intake.outcome == 'failure'
+        run: exit 1

@@ -1,0 +1,63 @@
+name: 📥 Enviar vídeos do projeto
+description: Anexe aqui os vídeos que devem entrar no projeto (arraste os arquivos nesta issue).
+title: "Enviar vídeos — novo-projeto"
+labels: ["intake", "videos"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Arraste os vídeos na caixa abaixo** e clique em *Submit new issue* / *Comment*.
+        O GitHub hospeda cada arquivo e gera um link permanente
+        (`https://github.com/user-attachments/assets/...`) — é esse link que o
+        script `tools/gh_issue_intake.py` coleta.
+
+        ⚠️ **Limites:** vídeo em issue = **10 MB** (conta Free) ou 100 MB (conta paga).
+        Qualquer outro arquivo (ex.: `.zip` com vídeos dentro) = **25 MB**.
+        Acima disso, use um *Release* (2 GB por arquivo) ou re-encode com ffmpeg.
+        Em repositório público os anexos ficam **públicos**.
+  - type: input
+    id: projeto
+    attributes:
+      label: Projeto de destino
+      description: Pasta dentro do repositório que vai receber os vídeos.
+      placeholder: projects/novo-projeto
+      value: projects/novo-projeto
+    validations:
+      required: true
+  - type: textarea
+    id: videos
+    attributes:
+      label: Vídeos
+      description: Arraste/solte os arquivos de vídeo aqui (um ou vários). Se quiser, escreva o nome desejado e o trecho aproveitado de cada um.
+      placeholder: |
+        01-abertura.mp4 — usar 00:00 a 00:15
+        02-depoimento.mp4 — vídeo inteiro
+        (arraste os arquivos aqui)
+    validations:
+      required: true
+  - type: dropdown
+    id: uso
+    attributes:
+      label: Uso no projeto
+      multiple: true
+      options:
+        - Material local (local_videos) para o MoneyPrinterTurbo
+        - Referência/inspiração apenas
+        - Corte/edição manual
+        - Outro (descrever nas observações)
+  - type: textarea
+    id: observacoes
+    attributes:
+      label: Observações
+      description: Ordem desejada, proporção (9:16 / 16:9), áudio original, direitos de uso, etc.
+    validations:
+      required: false
+  - type: checkboxes
+    id: termos
+    attributes:
+      label: Confirmações
+      options:
+        - label: Tenho direito de usar estes vídeos no projeto.
+          required: true
+        - label: Sei que, em repositório público, os anexos ficam acessíveis a qualquer pessoa.
+          required: true

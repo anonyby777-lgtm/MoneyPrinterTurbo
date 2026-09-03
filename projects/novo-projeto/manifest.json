@@ -1,0 +1,23 @@
+{
+  "project": "novo-projeto",
+  "created": "2026-09-03T00:00:00Z",
+  "updated": "2026-09-03T00:00:00Z",
+  "intake": {
+    "issue_template": "projects/novo-projeto/intake/enviar-videos.yml",
+    "collector": "tools/gh_issue_intake.py",
+    "videos_dir": "projects/novo-projeto/videos",
+    "max_commit_bytes": 94371840
+  },
+  "videos": [
+    {
+      "file": "C534F059-6791-4FBA-BE24-79E5FC0DA2A6.mp4",
+      "path": "C534F059-6791-4FBA-BE24-79E5FC0DA2A6.mp4",
+      "bytes": 2249149,
+      "sha256": "1b2909d19b16cd9342727ed999ea34849eae896862347f6a9f9855f94f9c666a",
+      "source": "anexado diretamente no chat do Arena (commit a3ddf61, raiz do repositório)",
+      "note": "vídeo já presente no repo; symlink em projects/novo-projeto/videos/",
+      "added_at": "2026-09-03T00:00:00Z",
+      "committable": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+# Vídeos recebidos não vão para o histórico do git (limite de 100 MB por arquivo).
+# Para versionar mesmo assim: apague este arquivo e use Git LFS (git lfs track "*.mp4").
+*
+!.gitignore
