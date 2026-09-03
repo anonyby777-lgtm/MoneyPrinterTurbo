@@ -19,5 +19,58 @@
       "added_at": "2026-09-03T00:00:00Z",
       "committable": true
     }
-  ]
+  ],
+  "rebrand": {
+    "logo": "projects/novo-projeto/brand/nuaky7fx_logo_alpha.png",
+    "output_dir": "projects/novo-projeto/videos_rebrand",
+    "encoder": "libx264 crf 18, audio copy",
+    "updated_at": "2026-09-03T20:21:16Z",
+    "videos": [
+      {
+        "file": "14CC0727-9363-4294-B578-CEEE4E6C377F_nuaky7fx.mp4",
+        "source": "14CC0727-9363-4294-B578-CEEE4E6C377F.mp4",
+        "bytes": 4897055,
+        "old_mark_removed": true,
+        "note": "tinha '© 2026 Silent Cine. All Rights Reserved.' no rodapé",
+        "logo": "projects/novo-projeto/brand/nuaky7fx_logo_alpha.png",
+        "added_at": "2026-09-03T20:19:57Z"
+      },
+      {
+        "file": "25B50E41-D64E-462F-97CC-F2D8C880E9B6_nuaky7fx.mp4",
+        "source": "25B50E41-D64E-462F-97CC-F2D8C880E9B6.mp4",
+        "bytes": 12335518,
+        "old_mark_removed": false,
+        "note": "sem marca antiga detectada",
+        "logo": "projects/novo-projeto/brand/nuaky7fx_logo_alpha.png",
+        "added_at": "2026-09-03T20:20:18Z"
+      },
+      {
+        "file": "B2DF9793-859B-43C7-B906-D2CE5E337AC9_nuaky7fx.mp4",
+        "source": "B2DF9793-859B-43C7-B906-D2CE5E337AC9.mp4",
+        "bytes": 8089042,
+        "old_mark_removed": false,
+        "note": "sem marca antiga detectada",
+        "logo": "projects/novo-projeto/brand/nuaky7fx_logo_alpha.png",
+        "added_at": "2026-09-03T20:20:35Z"
+      },
+      {
+        "file": "FEA25167-3C0C-482D-A855-C6BEDA6B5D7F_nuaky7fx.mp4",
+        "source": "FEA25167-3C0C-482D-A855-C6BEDA6B5D7F.mp4",
+        "bytes": 10799916,
+        "old_mark_removed": false,
+        "note": "sem marca antiga detectada",
+        "logo": "projects/novo-projeto/brand/nuaky7fx_logo_alpha.png",
+        "added_at": "2026-09-03T20:20:48Z"
+      },
+      {
+        "file": "C534F059-6791-4FBA-BE24-79E5FC0DA2A6_nuaky7fx.mp4",
+        "source": "C534F059-6791-4FBA-BE24-79E5FC0DA2A6.mp4",
+        "bytes": 11678529,
+        "old_mark_removed": false,
+        "note": "sem marca antiga detectada",
+        "logo": "projects/novo-projeto/brand/nuaky7fx_logo_alpha.png",
+        "added_at": "2026-09-03T20:21:16Z"
+      }
+    ]
+  }
 }

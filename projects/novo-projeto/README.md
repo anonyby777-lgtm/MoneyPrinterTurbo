@@ -108,3 +108,28 @@ curl http://127.0.0.1:8080/api/v1/video_materials   # lista o que já está lá
 - Com `--push`, os vídeos são adicionados com `git add -f` (o `.gitignore` de
   `videos/` é sobrescrito de propósito, porque você pediu para versionar).
   Arquivos acima de 90 MB são mantidos só no disco — o GitHub recusa push > 100 MB.
+
+## 🎬 Rebrand dos vídeos (NUAKY7FX)
+
+Feito em `tools/rebrand_videos.py` (roda com Python 3.11 + numpy/scipy/ffmpeg):
+
+- **Logo nova:** `nuaky7fx_font_gothic_clean.png` → convertida para alpha real em
+  `brand/nuaky7fx_logo_alpha.png` (o fundo preto vira transparência pela luminância).
+- **Marca antiga removida:** `14CC0727-….mp4` tinha o crédito
+  "© 2026 Silent Cine. All Rights Reserved." queimado no rodapé (x≈452-838,
+  y≈602-638) entre t≈0,7s e t≈19,4s — removido com `delogo` nessa janela.
+- **Sem marca antiga** nos demais vídeos (as tipografias que aparecem são letras
+  da edição, não watermark; verificado por detecção de overlay estático +
+  varredura temporal do rodapé).
+- **Saída:** `videos_rebrand/<uuid>_nuaky7fx.mp4` (H.264 crf 18, áudio copiado),
+  com a logo nova no rodapé central de todos os 5 vídeos.
+
+```bash
+/tmp/ffenv/bin/python tools/rebrand_videos.py            # tudo de novo
+/tmp/ffenv/bin/python tools/rebrand_videos.py --only B2DF9793
+```
+
+O `nuaky7fx_watermark.png` (variante fina) veio achatado sobre um quadriculado
+"falso transparente" (alpha=255 em tudo, letras brancas sobre quadrados
+brancos): não há informação para recuperar a transparência dele. Se um dia
+quiser essa variante, reexporte o PNG com alpha de verdade.
